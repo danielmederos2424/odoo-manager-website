@@ -95,7 +95,7 @@ const translations = {
       brandDesc: 'Simplifying Odoo instance management with modern tools and intuitive design.',
       product: 'Product',
       support: 'Support',
-      company: 'Company',
+      company: 'WebGraphix',
       copyright: 'All rights reserved.',
       attribution: 'Odoo is a trademark of Odoo S.A. This tool is not officially associated with Odoo S.A.',
       credits: 'Made with <0/> for the Odoo community'
@@ -194,7 +194,7 @@ const translations = {
       brandDesc: 'Simplificando la gestión de instancias Odoo con herramientas modernas y diseño intuitivo.',
       product: 'Producto',
       support: 'Soporte',
-      company: 'Compañía',
+      company: 'WebGraphix',
       copyright: 'Todos los derechos reservados.',
       attribution: 'Odoo es una marca registrada de Odoo S.A. Esta herramienta no está asociada oficialmente con Odoo S.A.',
       credits: 'Hecho con <0/> para la comunidad Odoo'
