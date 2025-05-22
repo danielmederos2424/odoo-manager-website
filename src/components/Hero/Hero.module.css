@@ -7,6 +7,42 @@
   overflow: hidden;
 }
 
+.languageSwitcher {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.langButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background-elevated);
+  color: var(--text-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: var(--font-weight-bold);
+  transition: all var(--transition-normal);
+}
+
+.langButton:hover {
+  background: var(--background-highlighted);
+  transform: translateY(-2px);
+}
+
+.langButton.active {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.4);
+}
+
 .background {
   position: absolute;
   top: 0;
@@ -311,6 +347,15 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding: 80px 0;
+  }
+  
+  .languageSwitcher {
+    top: 15px;
+    right: 15px;
+  }
+  
   .title {
     font-size: var(--font-size-4xl);
   }

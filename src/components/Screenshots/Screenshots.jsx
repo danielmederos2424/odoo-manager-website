@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { useI18n, FadeText } from '../../hooks/useI18n'
 import styles from './Screenshots.module.css'
 
 const Screenshots = () => {
@@ -11,27 +12,29 @@ const Screenshots = () => {
   })
   
   const [selectedImage, setSelectedImage] = useState(0)
+  const { translations } = useI18n()
+  const t = translations.screenshots
 
   const screenshots = [
     {
       src: '/screenshots/main_dashboard.png',
-      title: 'Main Dashboard',
-      description: 'Overview of all your Odoo and PostgreSQL instances with quick actions and status monitoring.'
+      title: t.items[0].title,
+      description: t.items[0].description
     },
     {
       src: '/screenshots/instance_creation.png',
-      title: 'Instance Creation',
-      description: 'Easy-to-use interface for creating new Odoo instances with comprehensive configuration options.'
+      title: t.items[1].title,
+      description: t.items[1].description
     },
     {
       src: '/screenshots/container_logs.png',
-      title: 'Container Logs',
-      description: 'Real-time container logs with filtering options for debugging and monitoring.'
+      title: t.items[2].title,
+      description: t.items[2].description
     },
     {
       src: '/screenshots/settings.png',
-      title: 'Settings & Customization',
-      description: 'Personalize your experience with theme options, language settings, and preferences.'
+      title: t.items[3].title,
+      description: t.items[3].description
     }
   ]
 
@@ -65,7 +68,9 @@ const Screenshots = () => {
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.1 }}
           >
-            See <span className="text-gradient">Odoo Manager</span> in Action
+            <FadeText>
+              <span dangerouslySetInnerHTML={{ __html: t.title }} />
+            </FadeText>
           </motion.h2>
           <motion.p 
             className={styles.description}
@@ -73,7 +78,7 @@ const Screenshots = () => {
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
           >
-            Explore the intuitive interface designed to make Odoo instance management effortless
+            <FadeText>{t.description}</FadeText>
           </motion.p>
         </div>
 
@@ -132,9 +137,9 @@ const Screenshots = () => {
                   className={styles.thumbnailImage}
                 />
                 <div className={styles.thumbnailContent}>
-                  <h4 className={styles.thumbnailTitle}>{screenshot.title}</h4>
+                  <h4 className={styles.thumbnailTitle}><FadeText>{screenshot.title}</FadeText></h4>
                   <p className={styles.thumbnailDescription}>
-                    {screenshot.description}
+                    <FadeText>{screenshot.description}</FadeText>
                   </p>
                 </div>
               </motion.div>

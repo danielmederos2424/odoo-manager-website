@@ -9,6 +9,7 @@ import {
   logoFacebook
 } from 'ionicons/icons'
 import { IonIcon } from '@ionic/react'
+import { useI18n, FadeText } from '../../hooks/useI18n'
 import styles from './Footer.module.css'
 
 const Footer = () => {
@@ -18,23 +19,25 @@ const Footer = () => {
     amount: 0.05
   })
   
+  const { translations } = useI18n()
+  const t = translations.footer
   const currentYear = new Date().getFullYear()
 
   const links = {
     product: [
-      { name: 'Features', href: '#features' },
+      { name: t.product, href: '#features' },
       { name: 'Screenshots', href: '#screenshots' },
       { name: 'Downloads', href: '#downloads' },
       { name: 'Documentation', href: 'https://github.com/danielmederos2424/odoo-manager#readme' }
     ],
     support: [
-      { name: 'GitHub Issues', href: 'https://github.com/danielmederos2424/odoo-manager/issues' },
+      { name: t.support, href: 'https://github.com/danielmederos2424/odoo-manager/issues' },
       { name: 'Bug Reports', href: 'https://github.com/danielmederos2424/odoo-manager/issues/new?template=bug_report.md' },
       { name: 'Feature Requests', href: 'https://github.com/danielmederos2424/odoo-manager/issues/new?template=feature_request.md' },
       { name: 'Discussions', href: 'https://github.com/danielmederos2424/odoo-manager/discussions' }
     ],
     company: [
-      { name: 'WebGraphix', href: 'https://www.webgraphix.online' },
+      { name: t.company, href: 'https://www.webgraphix.online' },
       { name: 'Contact', href: 'mailto:info@webgraphix.online' }
     ]
   }
@@ -67,7 +70,7 @@ const Footer = () => {
               <h3 className={styles.brandName}>Odoo Manager</h3>
             </div>
             <p className={styles.brandDescription}>
-              Simplifying Odoo instance management with modern tools and intuitive design.
+              <FadeText>{t.brandDesc}</FadeText>
             </p>
             <div className={styles.social}>
               {socialLinks.map((social, index) => (
@@ -99,7 +102,7 @@ const Footer = () => {
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <h4 className={styles.linkTitle}>Product</h4>
+              <h4 className={styles.linkTitle}><FadeText>{t.product}</FadeText></h4>
               <ul className={styles.linkList}>
                 {links.product.map((link, index) => (
                   <motion.li 
@@ -114,7 +117,7 @@ const Footer = () => {
                       target={link.href.startsWith('http') ? '_blank' : '_self'}
                       rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     >
-                      {link.name}
+                      <FadeText>{link.name}</FadeText>
                     </a>
                   </motion.li>
                 ))}
@@ -127,7 +130,7 @@ const Footer = () => {
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <h4 className={styles.linkTitle}>Support</h4>
+              <h4 className={styles.linkTitle}><FadeText>{t.support}</FadeText></h4>
               <ul className={styles.linkList}>
                 {links.support.map((link, index) => (
                   <motion.li 
@@ -142,7 +145,7 @@ const Footer = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {link.name}
+                      <FadeText>{link.name}</FadeText>
                     </a>
                   </motion.li>
                 ))}
@@ -155,7 +158,7 @@ const Footer = () => {
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
-              <h4 className={styles.linkTitle}>Company</h4>
+              <h4 className={styles.linkTitle}><FadeText>{t.company}</FadeText></h4>
               <ul className={styles.linkList}>
                 {links.company.map((link, index) => (
                   <motion.li 
@@ -170,7 +173,7 @@ const Footer = () => {
                       target={link.href.startsWith('http') ? '_blank' : '_self'}
                       rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     >
-                      {link.name}
+                      <FadeText>{link.name}</FadeText>
                     </a>
                   </motion.li>
                 ))}
@@ -186,13 +189,15 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
         >
           <div className={styles.copyright}>
-            <p>© {currentYear} WebGraphix. All rights reserved.</p>
+            <p>
+              &copy; {currentYear} WebGraphix. <FadeText>{t.copyright}</FadeText>
+            </p>
             <p className={styles.attribution}>
-              Odoo is a trademark of Odoo S.A. This tool is not officially associated with Odoo S.A.
+              <FadeText>{t.attribution}</FadeText>
             </p>
           </div>
           <div className={styles.credits}>
-            <p>Made with <IonIcon icon={heartOutline} /> for the Odoo community</p>
+            <p><FadeText>{t.credits.replace('<0/>', '♥')}</FadeText></p>
           </div>
         </motion.div>
       </div>

@@ -12,6 +12,7 @@ import {
   constructOutline 
 } from 'ionicons/icons'
 import { IonIcon } from '@ionic/react'
+import { useI18n, FadeText } from '../../hooks/useI18n'
 import styles from './Downloads.module.css'
 
 const Downloads = () => {
@@ -21,7 +22,9 @@ const Downloads = () => {
     amount: 0.05,
     margin: "0px 0px -10% 0px"
   })
-  
+  const { translations } = useI18n()
+  const t = translations.downloads
+
   const downloads = [
     {
       platform: 'Windows',
@@ -30,7 +33,7 @@ const Downloads = () => {
       size: '~93 MB',
       format: '.exe',
       url: 'https://github.com/danielmederos2424/odoo-manager/releases/latest/download/odoo-manager-win.exe',
-      description: 'Native Windows installer with automatic updates'
+      description: t.button + ' Windows'
     },
     {
       platform: 'macOS',
@@ -39,7 +42,7 @@ const Downloads = () => {
       size: '~114 MB',
       format: '.dmg',
       url: 'https://github.com/danielmederos2424/odoo-manager/releases/latest/download/odoo-manager-mac.dmg',
-      description: 'Universal binary supporting Intel and Apple Silicon'
+      description: t.button + ' macOS'
     },
     {
       platform: 'Linux',
@@ -48,7 +51,7 @@ const Downloads = () => {
       size: '~80 MB',
       format: '.deb',
       url: 'https://github.com/danielmederos2424/odoo-manager/releases/latest/download/odoo-manager-linux.deb',
-      description: 'Debian package for Ubuntu and Debian-based systems, other formats are available on the release page'
+      description: t.button + ' Linux'
     }
   ]
 
@@ -85,7 +88,9 @@ const Downloads = () => {
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Download <span className="text-gradient">Odoo Manager</span>
+            <FadeText>
+              <span dangerouslySetInnerHTML={{ __html: t.title }} />
+            </FadeText>
           </motion.h2>
           <motion.p 
             className={styles.description}
@@ -93,7 +98,7 @@ const Downloads = () => {
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Get started with Odoo Manager on your preferred platform. All downloads include automatic updates.
+            <FadeText>{t.description}</FadeText>
           </motion.p>
         </div>
 
@@ -117,13 +122,13 @@ const Downloads = () => {
                     <IonIcon icon={download.icon} />
                   </div>
                   <div className={styles.platformInfo}>
-                    <h3 className={styles.platformName}>{download.platform}</h3>
+                    <h3 className={styles.platformName}><FadeText>{download.platform}</FadeText></h3>
                     <p className={styles.platformVersion}>{download.version}</p>
                   </div>
                 </div>
                 
                 <div className={styles.cardContent}>
-                  <p className={styles.cardDescription}>{download.description}</p>
+                  <p className={styles.cardDescription}><FadeText>{download.description}</FadeText></p>
                   
                   <div className={styles.downloadDetails}>
                     <span className={styles.downloadSize}>{download.size}</span>
@@ -139,7 +144,7 @@ const Downloads = () => {
                     download
                     className={styles.downloadButton}
                   >
-                    Download for {download.platform}
+                    <FadeText>{t.button} {download.platform}</FadeText>
                   </Button>
                 </div>
               </Card>
@@ -154,7 +159,7 @@ const Downloads = () => {
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            System Requirements
+            <FadeText>{t.requirementsTitle}</FadeText>
           </motion.h3>
           <motion.div 
             className={styles.requirementsGrid}
@@ -162,7 +167,7 @@ const Downloads = () => {
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
             transition={{ duration: 0.5, delay: 0.9 }}
           >
-            {requirements.map((req, index) => (
+            {t.requirements.map((req, index) => (
               <motion.div 
                 key={index} 
                 className={styles.requirement}
@@ -171,11 +176,16 @@ const Downloads = () => {
                 transition={{ duration: 0.3, delay: 1 + (index * 0.1) }}
               >
                 <div className={styles.requirementIcon}>
-                  <IonIcon icon={req.icon} />
+                  <IonIcon icon={[
+                    logoDocker,
+                    buildOutline,
+                    saveOutline,
+                    constructOutline
+                  ][index]} />
                 </div>
                 <div className={styles.requirementContent}>
-                  <h4 className={styles.requirementTitle}>{req.title}</h4>
-                  <p className={styles.requirementDescription}>{req.description}</p>
+                  <h4 className={styles.requirementTitle}><FadeText>{req.title}</FadeText></h4>
+                  <p className={styles.requirementDescription}><FadeText>{req.description}</FadeText></p>
                 </div>
               </motion.div>
             ))}
@@ -190,16 +200,16 @@ const Downloads = () => {
             transition={{ duration: 0.5, delay: 1.4 }}
           >
             <Card className={styles.sourceCard}>
-              <h4 className={styles.sourceTitle}>Open Source</h4>
+              <h4 className={styles.sourceTitle}><FadeText>{t.openSourceTitle}</FadeText></h4>
               <p className={styles.sourceDescription}>
-                Odoo Manager is open source software. View the code, contribute, or report issues on GitHub.
+                <FadeText>{t.openSourceDesc}</FadeText>
               </p>
               <Button 
                 variant="outline" 
                 href="https://github.com/danielmederos2424/odoo-manager"
                 className={styles.sourceButton}
               >
-                View Source Code
+                <FadeText>{t.openSourceBtn}</FadeText>
               </Button>
             </Card>
           </motion.div>
@@ -211,16 +221,16 @@ const Downloads = () => {
             transition={{ duration: 0.5, delay: 1.5 }}
           >
             <Card className={styles.supportCard}>
-              <h4 className={styles.supportTitle}>Need Help?</h4>
+              <h4 className={styles.supportTitle}><FadeText>{t.supportTitle}</FadeText></h4>
               <p className={styles.supportDescription}>
-                Check our documentation or reach out to the community for support and questions.
+                <FadeText>{t.supportDesc}</FadeText>
               </p>
               <Button 
                 variant="outline" 
                 href="https://github.com/danielmederos2424/odoo-manager/issues"
                 className={styles.supportButton}
               >
-                Get Support
+                <FadeText>{t.supportBtn}</FadeText>
               </Button>
             </Card>
           </motion.div>

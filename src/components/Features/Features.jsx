@@ -11,6 +11,7 @@ import {
 } from 'ionicons/icons'
 import { IonIcon } from '@ionic/react'
 import Card from '../UI/Card/Card'
+import { useI18n, FadeText } from '../../hooks/useI18n'
 import styles from './Features.module.css'
 
 const Features = () => {
@@ -21,45 +22,8 @@ const Features = () => {
     amount: 0.1,
     margin: "0px 0px -10% 0px"
   })
-
-  const features = [
-    {
-      icon: cogOutline,
-      title: 'Comprehensive Instance Management',
-      description: 'Create, start, stop, and delete Odoo instances with a few clicks. Support for both Community and Enterprise editions with multiple Odoo versions.',
-      highlights: ['Multiple Odoo versions (14-18)', 'Community & Enterprise editions', 'Port mapping & database settings']
-    },
-    {
-      icon: serverOutline,
-      title: 'PostgreSQL Database Management',
-      description: 'Create and manage PostgreSQL database instances with secure credential management and automatic linking to Odoo instances.',
-      highlights: ['Secure credential management', 'Automatic instance linking', 'Multi-database support']
-    },
-    {
-      icon: logoDocker,
-      title: 'Docker Integration',
-      description: 'Seamless Docker Compose orchestration with automatic network configuration, volume management, and container log access.',
-      highlights: ['Automatic network setup', 'Volume management', 'Container logs with filtering']
-    },
-    {
-      icon: terminalOutline,
-      title: 'Developer-Friendly Features',
-      description: 'Direct access to configurations, custom module directories, persistent data storage, and enterprise addons support.',
-      highlights: ['Custom module mapping', 'Persistent data storage', 'Enterprise addons support']
-    },
-    {
-      icon: colorPaletteOutline,
-      title: 'Modern User Experience',
-      description: 'Intuitive interface with smooth animations, dark/light themes, real-time monitoring, and multi-language support.',
-      highlights: ['Smooth animations', 'Theme support', 'Multi-language (EN/ES)']
-    },
-    {
-      icon: desktopOutline,
-      title: 'Cross-Platform Support',
-      description: 'Built with Electron for seamless operation across Windows, macOS, and Linux with native performance.',
-      highlights: ['Windows, macOS, Linux', 'Native performance', 'Consistent experience']
-    }
-  ]
+  const { translations } = useI18n()
+  const t = translations.features
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -100,7 +64,9 @@ const Features = () => {
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.1 }}
           >
-            Powerful Features for <span className="text-gradient">Odoo Development</span>
+            <FadeText>
+              <span dangerouslySetInnerHTML={{ __html: t.title }} />
+            </FadeText>
           </motion.h2>
           <motion.p 
             className={styles.description}
@@ -108,7 +74,7 @@ const Features = () => {
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 10 }}
             transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
           >
-            Everything you need to manage your Odoo instances efficiently and professionally
+            <FadeText>{t.description}</FadeText>
           </motion.p>
         </motion.div>
 
@@ -118,7 +84,7 @@ const Features = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
         >
-          {features.map((feature, index) => (
+          {t.cards.map((feature, index) => (
             <motion.div 
               key={index} 
               variants={cardVariants}
@@ -126,17 +92,24 @@ const Features = () => {
             >
               <Card className={styles.featureCard}>
                 <div className={styles.cardIcon}>
-                  <IonIcon icon={feature.icon} />
+                  <IonIcon icon={[
+                    cogOutline,
+                    serverOutline,
+                    logoDocker,
+                    terminalOutline,
+                    colorPaletteOutline,
+                    desktopOutline
+                  ][index]} />
                 </div>
-                <h3 className={styles.cardTitle}>{feature.title}</h3>
-                <p className={styles.cardDescription}>{feature.description}</p>
+                <h3 className={styles.cardTitle}><FadeText>{feature.title}</FadeText></h3>
+                <p className={styles.cardDescription}><FadeText>{feature.description}</FadeText></p>
                 <ul className={styles.highlights}>
                   {feature.highlights.map((highlight, i) => (
                     <li key={i} className={styles.highlight}>
                       <span className={styles.highlightIcon}>
                         <IonIcon icon={checkmarkOutline} />
                       </span>
-                      {highlight}
+                      <FadeText>{highlight}</FadeText>
                     </li>
                   ))}
                 </ul>
