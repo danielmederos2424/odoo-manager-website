@@ -1,0 +1,242 @@
+.downloads {
+    background: var(--gradient-secondary);
+    position: relative;
+  }
+  
+  .downloads::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gradient-primary);
+    opacity: 0.3;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: var(--spacing-4xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.2;
+  }
+  
+  .description {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  
+  .downloadGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-4xl);
+  }
+  
+  .downloadCard {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    transition: all var(--transition-normal);
+  }
+  
+  .cardHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .platformIcon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .platformInfo {
+    text-align: center;
+  }
+  
+  .platformName {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .platformVersion {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+  }
+  
+  .cardContent {
+    flex-grow: 1;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .cardDescription {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .downloadDetails {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .downloadSize,
+  .downloadFormat {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    background: var(--background-primary);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-subtle);
+  }
+  
+  .cardFooter {
+    margin-top: auto;
+  }
+  
+  .downloadButton {
+    width: 100%;
+  }
+  
+  .requirements {
+    margin-bottom: var(--spacing-4xl);
+  }
+  
+  .requirementsTitle {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    color: var(--text-primary);
+  }
+  
+  .requirementsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  
+  .requirement {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background: var(--background-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+    transition: all var(--transition-normal);
+  }
+  
+  .requirement:hover {
+    border-color: var(--accent-blue);
+    background: var(--background-elevated);
+  }
+  
+  .requirementIcon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: var(--spacing-xs);
+  }
+  
+  .requirementContent {
+    flex: 1;
+  }
+  
+  .requirementTitle {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .requirementDescription {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  
+  .additionalInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+  }
+  
+  .infoCard {
+    height: 100%;
+  }
+  
+  .sourceCard,
+  .supportCard {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sourceTitle,
+  .supportTitle {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .sourceDescription,
+  .supportDescription {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+    flex-grow: 1;
+  }
+  
+  .sourceButton,
+  .supportButton {
+    margin-top: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: var(--font-size-3xl);
+    }
+    
+    .description {
+      font-size: var(--font-size-base);
+    }
+    
+    .downloadGrid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+    
+    .requirementsGrid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+    }
+    
+    .requirement {
+      padding: var(--spacing-md);
+    }
+    
+    .additionalInfo {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-lg);
+    }
+  }

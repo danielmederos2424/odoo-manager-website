@@ -1,0 +1,49 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build output directories
+dist/
+build/
+
+# Compiled source files
+*.o
+*.so
+*.dll
+*.exe
+*.class
+
+# Backup and temporary files
+*.tmp
+*.bak
+*~
+
+# IDE or Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Package distribution files
+*.tgz
+*.zip
+
+# Others (customize below)
