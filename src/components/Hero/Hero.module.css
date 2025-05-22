@@ -12,24 +12,41 @@
   top: 20px;
   right: 30px;
   display: flex;
+  align-items: center;
   gap: 8px;
   z-index: 10;
+  background: var(--background-elevated);
+  border-radius: var(--radius-lg);
+  padding: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-subtle);
 }
 
-.langButton {
-  width: 40px;
-  height: 40px;
+.languageIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--background-elevated);
+  padding: 8px;
+  color: var(--text-secondary);
+}
+
+.languageIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.langButton {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--text-primary);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--border-subtle);
   cursor: pointer;
-  font-size: 12px;
-  font-weight: var(--font-weight-bold);
+  font-size: 14px;
+  font-weight: var(--font-weight-medium);
   transition: all var(--transition-normal);
+  text-decoration: none;
 }
 
 .langButton:hover {

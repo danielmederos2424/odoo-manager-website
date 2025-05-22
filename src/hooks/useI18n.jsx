@@ -6,7 +6,7 @@ const translations = {
     hero: {
       title: 'Odoo Manager',
       subtitle: 'A Modern Desktop Application for Managing Odoo Instances with Docker',
-      description: 'Simplify the creation, management, and maintenance of Odoo instances using Docker Compose. Perfect for developers, system administrators, and businesses who want to run multiple Odoo environments locally without dealing with complex Docker commands.',
+      description: 'Simplify the creation, management, and maintenance of Odoo instances using Docker Compose. Perfect for developers, system administrators, and businesses who want to run multiple Odoo instances locally without dealing with complex Docker commands. Ideal for Odoo development and testing environments.',
       download: 'Download Now',
       github: 'View on GitHub',
       features: [
@@ -16,8 +16,8 @@ const translations = {
       ]
     },
     features: {
-      title: 'Powerful Features for <span class="text-gradient">Odoo Development</span>',
-      description: 'Everything you need to manage your Odoo instances efficiently and professionally',
+      title: 'Powerful Features for <span class="text-gradient">Running Multiple Odoo Instances Locally</span>',
+      description: 'Everything you need to run multiple Odoo instances locally and manage them efficiently and professionally',
       cards: [
         {
           title: 'Comprehensive Instance Management',
@@ -105,7 +105,7 @@ const translations = {
     hero: {
       title: 'Odoo Manager',
       subtitle: 'Una aplicación de escritorio moderna para gestionar instancias de Odoo con Docker',
-      description: 'Simplifica la creación, gestión y mantenimiento de instancias de Odoo usando Docker Compose. Perfecto para desarrolladores, administradores de sistemas y empresas que desean ejecutar múltiples entornos Odoo localmente sin lidiar con comandos complejos de Docker.',
+      description: 'Simplifica la creación, gestión y mantenimiento de instancias de Odoo usando Docker Compose. Perfecto para desarrolladores, administradores de sistemas y empresas que desean ejecutar múltiples instancias de Odoo localmente sin lidiar con comandos complejos de Docker. Ideal para entornos de desarrollo y pruebas de Odoo.',
       download: 'Descargar ahora',
       github: 'Ver en GitHub',
       features: [
@@ -115,8 +115,8 @@ const translations = {
       ]
     },
     features: {
-      title: 'Potentes funciones para el <span class="text-gradient">desarrollo Odoo</span>',
-      description: 'Todo lo que necesitas para gestionar tus instancias de Odoo de forma eficiente y profesional',
+      title: 'Potentes funciones para <span class="text-gradient">ejecutar múltiples instancias de Odoo localmente</span>',
+      description: 'Todo lo que necesitas para ejecutar múltiples instancias de Odoo localmente y gestionarlas de forma eficiente y profesional',
       cards: [
         {
           title: 'Gestión integral de instancias',

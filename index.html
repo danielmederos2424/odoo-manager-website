@@ -1,27 +1,54 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" x-default>
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Odoo Manager - A Modern Desktop Application for Managing Odoo Instances with Docker. Simplify your Odoo development workflow." />
-    <meta name="keywords" content="Odoo, Docker, Desktop App, Instance Management, PostgreSQL, Development Tools" />
+    <meta name="description" content="Odoo Manager - A Modern Desktop Application for Managing Odoo Instances with Docker. Run multiple Odoo instances locally with ease. Simplify your Odoo development workflow." />
+    <meta name="keywords" content="Odoo, Docker, Desktop App, Instance Management, PostgreSQL, Development Tools, run multiple odoo instances locally, odoo development, multiple odoo environments" />
     <meta name="author" content="WebGraphix" />
     
+    <!-- Canonical and Language Alternates -->
+    <link rel="canonical" href="https://odoo.webgraphix.online" />
+    <link rel="alternate" hreflang="en" href="https://odoo.webgraphix.online/?lang=en" />
+    <link rel="alternate" hreflang="es" href="https://odoo.webgraphix.online/?lang=es" />
+    <link rel="alternate" hreflang="x-default" href="https://odoo.webgraphix.online" />
+    
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Odoo Manager - Manage Odoo Instances with Ease" />
-    <meta property="og:description" content="A cross-platform desktop application that simplifies the creation, management, and maintenance of Odoo instances using Docker Compose." />
+    <meta property="og:title" content="Odoo Manager - Run Multiple Odoo Instances Locally with Ease" />
+    <meta property="og:description" content="A cross-platform desktop application that simplifies the creation, management, and maintenance of multiple Odoo instances using Docker Compose." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://your-domain.com" />
-    <meta property="og:image" content="/screenshots/main_dashboard.png" />
+    <meta property="og:url" content="https://odoo.webgraphix.online" />
+    <meta property="og:image" content="https://odoo.webgraphix.online/screenshots/main_dashboard.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
     
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Odoo Manager - Manage Odoo Instances with Ease" />
-    <meta name="twitter:description" content="A cross-platform desktop application that simplifies the creation, management, and maintenance of Odoo instances using Docker Compose." />
-    <meta name="twitter:image" content="/screenshots/main_dashboard.png" />
+    <meta name="twitter:title" content="Odoo Manager - Run Multiple Odoo Instances Locally with Ease" />
+    <meta name="twitter:description" content="A cross-platform desktop application that simplifies the creation, management, and maintenance of multiple Odoo instances using Docker Compose." />
+    <meta name="twitter:image" content="https://odoo.webgraphix.online/screenshots/main_dashboard.png" />
+    <meta name="twitter:site" content="@mederos_dev" />
     
-    <title>Odoo Manager - Manage Odoo Instances with Ease</title>
+    <title>Odoo Manager - Run Multiple Odoo Instances Locally with Ease</title>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Odoo Manager",
+      "operatingSystem": "Windows, macOS, Linux",
+      "applicationCategory": "DeveloperApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Run multiple Odoo instances locally with Docker. A desktop application that simplifies the management of Odoo environments."
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

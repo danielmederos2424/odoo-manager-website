@@ -60,20 +60,35 @@ const Hero = () => {
       </div>
       
       <div className={styles.languageSwitcher}>
-        <div 
+        <div className={styles.languageIcon}>
+          <IonIcon icon={languageOutline} />
+        </div>
+        <a 
+          href="/?lang=en"
           className={`${styles.langButton} ${lang === 'en' ? styles.active : ''}`} 
-          onClick={() => setLang('en')}
+          onClick={(e) => {
+            e.preventDefault();
+            setLang('en');
+          }}
           aria-label="Switch to English"
+          hrefLang="en"
+          rel={lang === 'en' ? 'canonical' : 'alternate'}
         >
-          EN
-        </div>
-        <div 
+          English
+        </a>
+        <a 
+          href="/?lang=es"
           className={`${styles.langButton} ${lang === 'es' ? styles.active : ''}`} 
-          onClick={() => setLang('es')}
-          aria-label="Switch to Spanish"
+          onClick={(e) => {
+            e.preventDefault();
+            setLang('es');
+          }}
+          aria-label="Cambiar a Español"
+          hrefLang="es"
+          rel={lang === 'es' ? 'canonical' : 'alternate'}
         >
-          ES
-        </div>
+          Español
+        </a>
       </div>
       
       <div className="container">

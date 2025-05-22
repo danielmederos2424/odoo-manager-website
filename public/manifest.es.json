@@ -1,0 +1,52 @@
+{
+  "name": "Odoo Manager - Ejecuta múltiples instancias de Odoo localmente",
+  "short_name": "Odoo Manager",
+  "description": "Una aplicación de escritorio moderna para gestionar múltiples instancias de Odoo localmente con Docker. Simplifica tu flujo de trabajo de desarrollo Odoo.",
+  "start_url": "/?lang=es",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#667eea",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "lang": "es",
+  "dir": "ltr",
+  "orientation": "any",
+  "categories": ["developer tools", "productivity", "utilities"],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://odoo.webgraphix.online/?lang=es"
+    }
+  ],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Descargar",
+      "url": "/?lang=es#downloads",
+      "description": "Descargar Odoo Manager para tu plataforma"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/main_dashboard.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "Panel principal mostrando instancias de Odoo"
+    }
+  ]
+}
