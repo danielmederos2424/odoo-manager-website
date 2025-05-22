@@ -27,28 +27,28 @@ const Downloads = () => {
       platform: 'Windows',
       icon: logoWindows,
       version: 'Windows 10/11',
-      size: '~85 MB',
+      size: '~93 MB',
       format: '.exe',
-      url: 'https://github.com/webgraphix/odoo-manager/releases/latest/download/odoo-manager-win.exe',
+      url: 'https://github.com/danielmederos2424/odoo-manager/releases/latest/download/odoo-manager-win.exe',
       description: 'Native Windows installer with automatic updates'
     },
     {
       platform: 'macOS',
       icon: logoApple,
       version: 'macOS 10.14+',
-      size: '~92 MB',
+      size: '~114 MB',
       format: '.dmg',
-      url: 'https://github.com/webgraphix/odoo-manager/releases/latest/download/odoo-manager-mac.dmg',
+      url: 'https://github.com/danielmederos2424/odoo-manager/releases/latest/download/odoo-manager-mac.dmg',
       description: 'Universal binary supporting Intel and Apple Silicon'
     },
     {
       platform: 'Linux',
       icon: logoTux,
       version: 'Ubuntu 18.04+',
-      size: '~88 MB',
-      format: '.AppImage',
-      url: 'https://github.com/webgraphix/odoo-manager/releases/latest/download/odoo-manager-linux.AppImage',
-      description: 'Portable AppImage that runs on most Linux distributions'
+      size: '~80 MB',
+      format: '.deb',
+      url: 'https://github.com/danielmederos2424/odoo-manager/releases/latest/download/odoo-manager-linux.deb',
+      description: 'Debian package for Ubuntu and Debian-based systems, other formats are available on the release page'
     }
   ]
 

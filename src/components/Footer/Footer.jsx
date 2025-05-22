@@ -4,7 +4,6 @@ import {
   logoGithub, 
   logoTwitter, 
   logoLinkedin, 
-  globeOutline,
   heartOutline,
   logoInstagram,
   logoFacebook
@@ -18,6 +17,8 @@ const Footer = () => {
     once: true,
     amount: 0.05
   })
+  
+  const currentYear = new Date().getFullYear()
 
   const links = {
     product: [
@@ -34,19 +35,16 @@ const Footer = () => {
     ],
     company: [
       { name: 'WebGraphix', href: 'https://www.webgraphix.online' },
-      { name: 'Contact', href: 'mailto:contact@webgraphix.online' },
-      { name: 'Privacy Policy', href: 'https://www.webgraphix.online/privacy' },
-      { name: 'Terms of Service', href: 'https://www.webgraphix.online/terms' }
+      { name: 'Contact', href: 'mailto:info@webgraphix.online' }
     ]
   }
 
   const socialLinks = [
     { name: 'GitHub', href: 'https://github.com/danielmederos2424', icon: logoGithub },
-    { name: 'Twitter', href: 'https://twitter.com/webgraphix', icon: logoTwitter },
-    { name: 'LinkedIn', href: 'https://linkedin.com/company/webgraphix', icon: logoLinkedin },
-    { name: 'Instagram', href: 'https://instagram.com/webgraphix', icon: logoInstagram },
-    { name: 'Facebook', href: 'https://facebook.com/webgraphix', icon: logoFacebook },
-    { name: 'Website', href: 'https://www.webgraphix.online', icon: globeOutline }
+    { name: 'Twitter', href: 'https://x.com/mederos_dev', icon: logoTwitter },
+    { name: 'LinkedIn', href: 'https://linkedin.com/in/danielmederos2424', icon: logoLinkedin },
+    { name: 'Instagram', href: 'https://instagram.com/webgraphix.online', icon: logoInstagram },
+    { name: 'Facebook', href: 'https://facebook.com/webgraphix.online', icon: logoFacebook }
   ]
 
   return (
@@ -188,7 +186,7 @@ const Footer = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
         >
           <div className={styles.copyright}>
-            <p>© 2025 WebGraphix. All rights reserved.</p>
+            <p>© {currentYear} WebGraphix. All rights reserved.</p>
             <p className={styles.attribution}>
               Odoo is a trademark of Odoo S.A. This tool is not officially associated with Odoo S.A.
             </p>
