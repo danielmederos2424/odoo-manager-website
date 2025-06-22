@@ -91,6 +91,12 @@ const translations = {
       supportDesc: 'Check our documentation or reach out to the community for support and questions.',
       supportBtn: 'Get Support'
     },
+    sponsors: {
+      title: 'Sponsors',
+      termius: {
+        description: 'provides a secure, reliable, and collaborative SSH client.'
+      }
+    },
     footer: {
       brandDesc: 'Simplifying Odoo instance management with modern tools and intuitive design.',
       product: 'Product',
@@ -189,6 +195,12 @@ const translations = {
       supportTitle: '¿Necesitas ayuda?',
       supportDesc: 'Consulta la documentación o contacta a la comunidad para soporte y preguntas.',
       supportBtn: 'Obtener soporte'
+    },
+    sponsors: {
+      title: 'Patrocinadores',
+      termius: {
+        description: 'proporciona un cliente SSH seguro, confiable y colaborativo.'
+      }
     },
     footer: {
       brandDesc: 'Simplificando la gestión de instancias Odoo con herramientas modernas y diseño intuitivo.',
