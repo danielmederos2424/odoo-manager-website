@@ -5,7 +5,6 @@ import Hero from './components/Hero/Hero'
 import Features from './components/Features/Features'
 import Screenshots from './components/Screenshots/Screenshots'
 import Downloads from './components/Downloads/Downloads'
-import Sponsors from './components/Sponsors/Sponsors'
 import Footer from './components/Footer/Footer'
 import styles from './App.module.css'
 
@@ -22,7 +21,6 @@ function App() {
         <Features />
         <Screenshots />
         <Downloads />
-        <Sponsors />
         <Footer />
       </motion.div>
     </I18nProvider>
